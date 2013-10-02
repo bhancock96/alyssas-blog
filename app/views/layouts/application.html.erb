@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AlyssasBlog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<p class="notice"><%= notice %></p>
+ 	<p class="alert"><%= alert %></p>
+ <% if current_admin %>
+ 	<li><%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></li>
+ 	<li><%= link_to "Create a new post", new_post_url %></li>
+ 	<li><%= link_to "Tweet Something"%></li>
+ 	<li><%= link_to "Import Instagram Picture"%></li>
+ 	<li><%= link_to "Check-In with Instagram", oauth_connect_url %></li>
+ <% end %>
+
+<%= yield %>
+
+</body>
+</html>

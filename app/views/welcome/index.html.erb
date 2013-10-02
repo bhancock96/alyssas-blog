@@ -1,0 +1,5 @@
+<h1>Index Page</h1>
+<%= link_to "Archives", posts_url %>
+
+<p><a href="/posts/<%=@post.id%>"><%= @post.title %></a></p>
+<p><%= @post.content %></p>

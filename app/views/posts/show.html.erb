@@ -1,0 +1,23 @@
+<h2><%= @post.title %></h2>
+
+<p><%= @post.content %></p>
+
+<ul>
+	<% @post.comments.each do |comment| %>
+	<li><%= comment.body %><br>by <%= comment.author%></li>
+	<% end %>
+</ul>
+
+<%= form_for @comment do |f|%>
+<%= f.hidden_field :post_id, :value => @post.id %>
+<%= f.text_area :body, :placeholder => "Enter your Comment" %>
+<br>
+<%= f.text_field :author, :placeholder => "Your Name" %>
+<br>
+<%= f.submit "Submit your Comment" %>
+<% end %>
+
+<ul>
+	<li><%= link_to "Archives", posts_url %></li>
+	<li><%= link_to "Most Recent Post", root_url %></li>
+</ul>

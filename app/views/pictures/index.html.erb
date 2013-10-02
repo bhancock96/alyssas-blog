@@ -1,0 +1,8 @@
+<div class="pictures">
+	<% @pictures.each do |media_item| %>
+		<form><input type="hidden" value="<%= media_item.id%>"></form>
+		<img src="<%= media_item.images.thumbnail.url%>">
+	<% end %>
+</div>
+
+<button id="load_more_images">Load More Images</button>
